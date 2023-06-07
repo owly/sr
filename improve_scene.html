@@ -1,0 +1,367 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scene Review</title>
+  <style>
+    .info-row {
+      background-color: #f8f9fa; /* Light gray */
+    }
+
+    .info-row textarea {
+      background-color: transparent;
+      border: none;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+  </style>
+ <script>
+     // Fetch initial data from the server when the page loads
+window.onload = function() {
+  fetch('/get_scene.php?movieid=7cb676d57114874e00c536916e6dcad2a5d3cb8c9a5abc06335df359cd9a6ef9&scene_number=9')
+    .then(response => response.json())
+    .then(data => {
+      document.querySelector('#title').textContent = data.title;
+      document.querySelector('#strengths').textContent = data.strengths;
+      document.querySelector('#weaknesses').textContent = data.weaknesses;
+      document.querySelector('#critique').textContent = data.critique;
+
+let ratingsList = document.querySelector('#ratings-list');
+ratingsList.innerHTML = ''; // Clear the list
+
+for (let rating in data.ratings) {
+  let li = document.createElement('li');
+  li.textContent = rating + ': ' + data.ratings[rating];
+  ratingsList.appendChild(li);
+}
+/*let ratingsDiv = document.querySelector('#ratings');
+ratingsDiv.innerHTML = ''; // Clear the contents of the div
+
+for (let rating in data.ratings) {
+  let p = document.createElement('p');
+  p.textContent = rating + ': ' + data.ratings[rating];
+  ratingsDiv.appendChild(p);
+}*/
+ //     document.querySelector('#ratings').value = data.ratings;
+      document.querySelector('#scene-text').value = data.sceneText;
+
+      // Summaries and suggestions are arrays of objects with text and isChecked properties
+      for (let summary of data.summaries) {
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = true;
+	checkbox.classList.add('summary-checkbox'); // Added class
+        let label = document.createElement('label');
+        label.textContent = summary;
+	label.classList.add('summary-text'); // Added class
+        document.querySelector('#summaries').append(checkbox, label, document.createElement('br'));
+      }
+
+      for (let suggestion of data.suggestions) {
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = true;
+	checkbox.classList.add('suggestion-checkbox'); // Added class
+        let label = document.createElement('label');
+        label.textContent = suggestion;
+	label.classList.add('suggestion-text'); // Added class
+        document.querySelector('#suggestions').append(checkbox, label, document.createElement('br'));
+      }
+
+for (let name in data.characters) {
+  let value =JSON.parse( data.characters[name]);
+  let checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = true;
+  checkbox.classList.add('character-checkbox'); // Added class
+  let label = document.createElement('label');
+  label.textContent = name;
+  let textarea = document.createElement('textarea');
+  textarea.rows = "6";
+  textarea.cols = "50";
+  if (value['description']) {
+    textarea.textContent = value['description'];
+  } else {
+    textarea.textContent = value; //'no description';  // default value if 'description' does not exist
+  }
+  textarea.classList.add('character-text'); // Added class
+  document.querySelector('#characters').append(checkbox, label, textarea, document.createElement('br'));
+}
+    });
+
+
+
+
+// Get button element
+const generateButton = document.getElementById('generate-button');
+
+generateButton.addEventListener('click', () => {
+  // Get data from the page
+  const strengths = document.getElementById('strengths').value;
+  const weaknesses = document.getElementById('weaknesses').value;
+  const critique = document.getElementById('critique').value;
+  const ratings = document.getElementById('ratings').value;
+
+  const sceneText = document.getElementById('scene-text').value;
+  const user_suggestions = document.getElementById('user_suggestions').value;
+  const user_backstory = document.getElementById('user_backstory').value;
+  const scene_number = 9;
+  const movie_id = '7cb676d57114874e00c536916e6dcad2a5d3cb8c9a5abc06335df359cd9a6ef9';
+
+/*  const summaries = Array.from(document.querySelectorAll('.summary')).map(summary => ({
+    text: summary.querySelector('.summary-text').value,
+    checked: summary.querySelector('.summary-checkbox').checked
+  }));
+*/
+
+const summaries = Array.from(document.querySelectorAll('#summaries .summary-checkbox'))
+  .filter(checkbox => checkbox.checked)
+  .map(checkbox => checkbox.nextElementSibling.textContent);
+
+const suggestions = Array.from(document.querySelectorAll('#suggestions .suggestion-checkbox'))
+  .filter(checkbox => checkbox.checked)
+  .map(checkbox => checkbox.nextElementSibling.textContent);
+
+/*const suggestions = Array.from(document.querySelectorAll('.suggestion'))
+  .filter(suggestion => suggestion.querySelector('.suggestion-checkbox').checked)
+  .map(suggestion => suggestion.querySelector('.suggestion-text').value);
+*/
+  // Create JSON data
+  const data = JSON.stringify({
+    sceneText,
+    summaries,
+    suggestions,
+    user_suggestions,
+    user_backstory,
+    scene_number,
+    movie_id
+  });
+
+  // Send a POST request to the server
+  fetch('/generate_improved_scene.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: data
+  })
+  .then(response => response.json())
+  .then(data => {
+	   var scene_html = data.sceneText.replace(/\n/g, "<br/>");
+//	   var scene_prompt = data.prompt.replace(/\n/g, "<br/>");
+	   document.getElementById('modal_scene-text').innerHTML = scene_html;
+	   document.getElementById('modal_prompt').innerHTML = data.prompt;
+	fetch('/rate_generated_scene.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: data
+  })
+  .then(response => response.json())
+  .then(data => {
+
+    // Update fields based on the response
+   document.getElementById('modal_strengths').innerHTML = data.strengths;
+   document.getElementById('modal_weaknesses').innerHTML = data.weaknesses;
+   $('#modal_improve').modal('show');
+
+let ratingsList = document.querySelector('#modal_ratings');
+ratingsList.innerHTML = ''; // Clear the list
+
+for (let rating in data.ratings) {
+  let li = document.createElement('li');
+  li.textContent = rating + ': ' + data.ratings[rating];
+  ratingsList.appendChild(li);
+}
+//   document.getElementById('modal_ratings').innerHTML = data.ratings;
+  })
+  .catch(error => console.error('Error:', error));
+});
+});
+};
+ </script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/4f1cd0c3e5e45d73095866ff9f25503b5e7206e7/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!-- Hotjar Tracking Code for script reader. ai -->
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR3WEHY0QH"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LR3WEHY0QH'); </script>
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3483438,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1485423462196782');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1485423462196782&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- fixed-top"-->
+    <div class="container">
+      <a class="navbar-brand" href="/">There's no place like (scriptreader) home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.php">Show me the money! (examples)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="analyzethis.php">Analyze this! (your script)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog">Dial B for Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.php">You talking to me? (contact)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <div class="container">
+<h2>Improve Scene "<span id='title'></span>"</div>
+  <div class="container">
+    <div class="row info-row" style="padding-top:22px;">
+      <div class="col">
+        <h3>Strengths</h3>
+        <div id="strengths"></div>
+      </div>
+      <div class="col">
+        <h3>Weaknesses</h3>
+        <div id="weaknesses""></div>
+      </div>
+      <div class="col">
+        <h2>Critique</h2>
+        <p id="critique"></p>
+      </div>
+<div id="ratings" class="container bg-light py-3">
+  <h2>Ratings</h2>
+  <ul id="ratings-list"></ul>
+</div>
+    </div>
+    <div class="row" style="padding-top:22px;">
+      <div class="col">
+        <h2>Scene Text</h2>
+        <textarea id="scene-text" class="form-control" rows="100"></textarea>
+      </div>
+      <div class="col">
+        <h4>What happened before this scene:</h4>
+        <div id="summaries"></div>
+        <p>Additional backstory for this scene:</p>
+        <textarea class="form-control" id='user_backstory' rows="5"></textarea>
+<hr/>
+        <h4>Suggestions to improve the scene</h4>
+        <div id="suggestions"></div>
+        <h4>Add Your Own improvement prompt</h4>
+        <textarea class="form-control" id='user_suggestions' rows="5"></textarea>
+<hr/>
+       <h3>Characters</h3>
+        <div id="characters"></div>
+        <p>Additional character info for this scene:</p>
+        <textarea class="form-control" id='user_characters' rows="5"></textarea>
+<br/>
+        <button  onclick="$('#modal_improve').modal('show');" id="generate-button" class="btn btn-primary">Generate</button>
+        <button onclick="$('#modal_improve').modal('show');" id="cancel-button" class="btn btn-secondary">Cancel</button>
+        <button id="save-button" class="btn btn-success">Save</button>
+      </div>
+  </div>
+
+
+
+    <div class="modal fade" id="modal_improve" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Improved </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+<div class="container">
+  <div class="row border">
+        <div border='solid' class="border-success col-6 grade8">
+        <b>Strengths:</b> <div id='modal_strengths'></div>
+        </div>
+        <div class="border-danger col-6 grade5">
+        <b>Weaknesses:</b><div id='modal_weaknesses'></div>
+        </div>
+</div>
+  <div class="row border">
+  Ratings: <div id='modal_ratings'></div>
+        </div>
+  <div class="row border">
+prompt:        <textarea id="modal_prompt" class="form-control" rows="1"></textarea>
+  <div id='modal_scene-text'></div>
+        </div>
+        </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save Scene</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Your custom script -->
+  <script src="script.js"></script>
+    
+</body>
+
+</html>
+
+ 
