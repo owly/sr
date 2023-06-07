@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/pages//assets//css//style.css">
+    <title>Overview - Tabs</title>
+</head>
+
+<body>
+
+    <div class="my-5">
+        <h1 class="text-center">The Shining</h1>
+        <div class="container mt-3 px-lg-5">
+            <ul class="m-0 nav nav-fill nav-justified nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation"> <button class="active nav-link" id="home-tab"
+                        data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                        aria-selected="true"> Overview </button>
+                </li>
+                <li class="nav-item text-nowrap" role="presentation"> <button class="nav-link" id="profile-tab"
+                        data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                        aria-selected="false"> Scene by Scene </button>
+                </li>
+                <li class="nav-item" role="presentation"> <button class="nav-link" id="messages-tab"
+                        data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab"
+                        aria-controls="messages" aria-selected="false">Continuous
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation"> <button class="nav-link" id="settings-tab"
+                        data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab"
+                        aria-controls="settings" aria-selected="false">Characters
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation"> <button class="nav-link" id="loglines-tab"
+                        data-bs-toggle="tab" data-bs-target="#loglines" type="button" role="tab"
+                        aria-controls="loglines" aria-selected="false">Loglines
+                    </button>
+                </li>
+            </ul>
+            <div class="border-grey bg-white p-3 tab-content px-md-4">
+
+                <!-- Tab 1 Content -->
+                <div class="tab-pane active pt-4" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="text-center">
+                        <p> <span class="fw-bold"> Genres:</span> - Drama - Horror - Psychological Thriller - Thriller -
+                            Mystery - Suspense
+                        </p>
+                        <p> <span class="fw-bold"> Summary:</span> "The Shining" is a horror movie about Jack Torrance,
+                            who takes a job as the winter caretaker of the Overlook Hotel with his wife Wendy and son
+                            Danny. Danny possesses psychic abilities and has an imaginary friend Tony. The family learns
+                            of the hotel's dark past and strange occurrences begin to happen. Jack becomes possessed by
+                            the hotel's malevolent spirits and goes on a killing spree, targeting his family and a hotel
+                            employee. In the end, Danny survives and Jack dies frozen in the hedge maze. Wendy and Danny
+                            flee in Halloran's Snowcat, leaving Jack to perish in the cold maze.
+                        </p>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-6 bg_success py-4 px-4 rounded-2 mb-4">
+                            <p class="mb-0"> <span class="fw-bold"> Strengths Found in some scenes:</span> Overall
+                                strengths include strong character development, well-crafted dialogue, effective use of
+                                tension and suspense, interesting setting and backstory, and haunting visual and sound
+                                effects. The scene effectively establishes motivations and conflicts, introduces
+                                characters, adds depth to relationships, and builds anticipation for future events. The
+                                use of themes like power, possession, and psychological terror add layers to the plot.
+                                The ensemble cast is capable of handling the intense and emotional scenes, making for a
+                                captivating and intense atmosphere.
+                            </p>
+                        </div>
+                        <div class="col-md-6 bg_danger py-4 px-4 rounded-2 mb-4">
+                            <p class="mb-0"> <span class="fw-bold"> Weaknesses found in some scenes:</span> Overall
+                                weaknesses: - Lack of significant conflict or action in many scenes - Slow pacing in
+                                some scenes - Dialogue could be stronger and more impactful - Lack of character
+                                development or emotional impact in some scenes - Some scenes may feel repetitive or
+                                lacking in plot progression - Lack of visual interest or action in some scenes - Some
+                                scenes may be offensive to certain viewers - Some actions of characters may seem
+                                contrived or vague.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-50 mobile_width mx-auto mt-4">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Type of Rating</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Average Overall</th>
+                                    <td>7.6</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Concept</th>
+                                    <td>7.1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Plot</th>
+                                    <td>7.2</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Characters</th>
+                                    <td>7.6</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Dialogue</th>
+                                    <td>7.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab 2 Content -->
+                <div class="tab-pane pt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <p class="text-center"> Each scene has been analyzed by the bots. See the full analysis by clicking
+                        the title.
+                        Click the scene number for the script text.
+                    </p>
+
+                    <div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Scene Text</th>
+                                    <th scope="col">Full Analysis</th>
+                                    <th scope="col">Tone</th>
+                                    <th scope="col">Overall Grade</th>
+                                    <th scope="col">Concept</th>
+                                    <th scope="col">Plot</th>
+                                    <th scope="col">Characters</th>
+                                    <th scope="col">Dialogue</th>
+                                    <th scope="col">Emotional Impact</th>
+                                    <th scope="col">Conflict</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab 3 Content -->
+                <div class="tab-pane pt-4" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                    <div class="text-center">
+                        <h3>1 - The Introduction</h3>
+                        <p class="mb-0">
+                            Overall Grade: <span class="fw-bold"> 7.5</span>
+                            - Concept: <span class="fw-bold">8</span>
+                            - Plot: <span class="fw-bold">7</span>
+                            - Characters: <span class="fw-bold">8</span>
+                            - Dialogue: <span class="fw-bold">8</span>
+                        </p>
+                        <p class="">
+                            Emotional Impact: <span class="fw-bold"> 6.0</span>
+                            - Conflict level: <span class="fw-bold">4.0</span>
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 d-flex justify-content-center pt-5 border">
+                            <p class="text-center mx-auto">
+
+                                "THE SHINING."
+
+
+                                Post Production Script.
+
+
+
+
+                                A STANLEY KUBRICK FILM
+
+                                EXECUTIVE PRODUCER:
+                                JAN HARLAN
+
+                                PRODUCED AND DIRECTED BY:
+                                STANLEY KUBRICK
+
+
+
+
+                                July, 1980
+                                 "THE SHINING."
+
+                                EXT. COLORADO MOUNTAIN (U.S.A.) - DAY - L.S.
+
+                                Lake and Mountains. CAMERA TRACKS FORWARD past island in
+                                lake.
+
+                                DISSOLVE TO:
+
+                                EXT. ROAD - DAY - L.S.
+
+                                High Angle V.W. Car moving along road - CAMERA TILTS UP with
+                                it.
+
+                                CUT TO:
+
+                                EXT. COLORADO MOUNTAINS & ROAD - DAY - L.S.
+
+                                Mountains and Road - V.W. Car moves away along road - CAMERA
+                                TRACKS after it.
+
+                                CUT TO:
+
+                                L.S. V.W. Car moving away along road - CAMERA TRACKS after
+                                it and passes car - TRACKING FORWARD to Mountains in b.g.
+
+                                CUT TO:
+
+                                M.L.S. High Angle V.W. Car moves away along road - CAMERA
+                                TILTS UP with it. Car goes into tunnel and comes out other
+                                side. CAMERA TRACKS after car.
+
+                                CUT TO:
+
+                                L.S. V.W. Car moves along road. CAMERA TRACKS after it.
+                                Mountains in b.g.
+
+                                CUT TO:
+
+                                L.S. High Angle V.W. Car moving away along road. Mountain
+                                in b.g. CAMERA TRACKS after car.
+
+                                CUT TO:
+
+                                L.S. Mountain - CAMERA TRACKS IN on Hotel.
+
+                                CUT TO:
+
+                                Black Frames.
+
+                                THE INTERVIEW.
+
+                                CUT TO:
+                                 2.
+
+
+                                INT. OVERLOOK HOTEL/LOBBY - DAY - M.L.S.
+
+                                Jack walks L-R across Lobby. CAMERA TRACKS BACK & PANS with
+                                him to RECEPTIONIST behind desk.
+
+                                JACK
+                                Hi, I've got an appointment with Mr.
+                                Ullman. My name is Jack Torrance.
+
+                                RECEPTIONIST
+                                His office is the first door on the
+                                left.
+
+                                JACK
+                                Thank you.
+
+                                JACK moves away R-L. CAMERA PANS with him and TRACKS IN
+                                after him through Secretary's office to open door of ULLMAN's
+                                office - revealing ULLMAN seated at desk with SECRETARY
+                                standing beside him.
+
+                                JACK
+                                Mr. Ullman?
+
+                                ULLMAN
+                                Yes?
+
+                                JACK
+                                I'm Jack Torrance.
+
+                                ULLMAN
+                                Oh, well - come on in Jack.
+
+                                ULLMAN stands up and hands book to SECRETARY, walking round
+                                side of desk. JACK moves into office. CAMERA TRACKS IN
+                                after him. He shakes hands with ULLMAN.
+
+                                ULLMAN
+                                Very nice to meet you.
+
+                                JACK
+                                Nice to meet you, Mr. Ullman.
+
+                                ULLMAN points to SECRETARY.
+
+                                ULLMAN
+                                This is my secretary, Susie.
+
+                                SECRETARY
+                                Hallo.
+
+                                JACK
+                                Susie, how do you do?
+                                 3.
+
+
+                                ULLMAN
+                                Have any trouble finding us?
+
+                                JACK
+                                Oh, no problem at all. I made the
+                                trip in three and a half hours.
+
+                                ULLMAN
+                                Well, that's very good time, very
+                                good. Please sit down a minute.
+
+                                ULLMAN points to chair cam.R. JACK sits cam.R.f.g. ULLMAN
+                                walks behind desk.
+
+                                ULLMAN
+                                JAck, just make yourself at home.
+                                Would you like some coffee?
+
+                                JACK
+                                Well, if you are going to have
+                                some, I wouldn't mind. Thanks.
+
+                                ULLMAN
+                                Susie.
+
+                                SECRETARY
+                                Sure.
+
+                                ULLMAN
+                                Oh, and would you ask Bill Watson
+                                to join us?
+
+                                SECRETARY
+                                Yes, I will.
+
+                                ULLMAN sits behind desk. SUSIE walks forward to R.f.g.
+
+                                DISSOLVE TO:
+
+                                EXT. APARTMENT BUILDING/BOULDER - DAY - L.S.
+
+                                Apartment Building - cars parked in front of it. Mountain
+                                in b.g. CAMERA TRACKS IN on Apartment Building.
+
+                                CUT TO:
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-8 border">
+                            <p class="text-center mt-3">
+                                <span class="fw-bold">Genres:</span>
+                                ["Drama","Psychological Thriller"]
+                            </p>
+
+                            <div class="border-bottom">
+                                <div class="row">
+                                    <div class="col-md-6 bg_success py-4 px-4 rounded-2 mb-4">
+                                        <p class="mb-0"> <span class="fw-bold"> Strengths:</span> "The scene sets up the
+                                            main character and establishes his motivation and purpose for being at the
+                                            hotel. The dialogue and character interactions are well-written and add
+                                            depth to the story."
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6 bg_danger py-4 px-4 rounded-2 mb-4">
+                                        <p class="mb-0"> <span class="fw-bold"> Weaknesses:</span> "The scene lacks
+                                            significant conflict or action, which may bore some audiences. It also does
+                                            not introduce any elements of horror or suspense, which may mislead viewers
+                                            about the genre of the film."
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="text-center"> <span class="fw-bold"> Summary:</span> Jack Torrance arrives at
+                                    the Overlook Hotel for a job interview with Mr. Ullman. He meets with Ullman and his
+                                    secretary, Susie, before being offered the job.
+                                </p>
+                            </div>
+
+                            <div class="border-bottom text-center py-4">
+                                <h4>Critique</h4>
+                                <p> There are a few things to note about this scene. Firstly, the lack of dialogue and
+                                    action makes it difficult to fully critique as a "scene" in the traditional sense.
+                                    Instead, it reads more like a sequence of shots that establish the setting and
+                                    introduce the main character.
+                                </p>
+                                <p> In terms of visual storytelling, the shots of the Colorado mountains and the V.W.
+                                    car moving along the road effectively set up the remote and isolated location of the
+                                    Overlook Hotel. The tracking shots also create a sense of movement and anticipation
+                                    for the audience.
+                                </p>
+                                <p> The actual scene in the lobby of the hotel is relatively straightforward, with the
+                                    dialogue serving mostly as exposition to establish Jack's character and his reason
+                                    for being at the hotel. However, it is notable that there is some visual interest in
+                                    the movement of the camera as it pans and tracks with Jack through the secretary's
+                                    office and into Ullman's office. This helps to add texture and movement to a scene
+                                    that is otherwise fairly static.
+                                </p>
+                                <p>Overall, while there may not be much to critique in terms of character development or
+                                    plot progression, the scene does effectively set up the setting and tone of the film
+                                    through striking visuals and camera movement.
+                                </p>
+                            </div>
+                            <div class="text-center py-4">
+                                <h4>Suggestions</h4>
+                                <p> The main suggestion would be to streamline the opening mountain and road shots to
+                                    make them more visually interesting and relevant to the story. One possibility could
+                                    be to have a character or object of importance in the car, or to show some
+                                    foreshadowing of the hotel's ominous presence in the landscape. Additionally, the
+                                    dialogue in the interview scene could be tweaked to reveal more about Jack's
+                                    character and motivations, as well as build tension or intrigue about the Overlook
+                                    Hotel. Overall, the scene could benefit from more purposeful storytelling and
+                                    character development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab 4 Content -->
+                <div class="tab-pane pt-4" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <h3 class="text-center">Characters in the screenplay, and their arcs:</h3>
+
+                    <table class="table table-bordered table-striped mt-4 table-responsive">
+                        <thead>
+                            <tr>
+                                <th scope="col">Character</th>
+                                <th scope="col">Arc</th>
+                                <th scope="col">Critique</th>
+                                <th scope="col">Suggestions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Danny</td>
+                                <td>Danny starts as a curious and sensitive child, fascinated with the world around him.
+                                    As he discovers his psychic abilities and the traumatic events at the hotel unfold,
+                                    he becomes more reserved and fearful. However, he ultimately finds the strength to
+                                    survive and escape with his mother, embracing his supernatural connection to the
+                                    hotel as a means of survival.</td>
+                                <td>The character arc could benefit from more development in the middle of the movie.
+                                    After Danny discovers his powers and experiences the strange incident at the hotel,
+                                    he becomes more reserved and fearful, but this transformation does not feel fully
+                                    fleshed out.</td>
+                                <td>Consider adding scenes that show Danny struggling to come to terms with his newfound
+                                    powers and the traumatic events at the hotel. This could help to make his
+                                    transformation more believable and poignant. Additionally, consider giving Danny
+                                    more agency in the final act of the movie, particularly in his escape from the hotel
+                                    with Wendy. This could further emphasize his growth as a character and his ability
+                                    to survive in the face of danger.</td>
+                            </tr>
+                            <tr>
+                                <td>Wendy</td>
+                                <td>Wendy starts as a caring and supportive mother and wife who is excited about their
+                                    future. As the events at the hotel unfold, she becomes increasingly anxious and
+                                    overwhelmed, trying to hold her family together despite growing tension. She
+                                    eventually reaches a breaking point and becomes determined to protect herself and
+                                    her son from Jack's dangerous behavior, showing immense courage in the face of
+                                    danger and surviving the ordeal.</td>
+                                <td>The character arc for Wendy feels a bit predictable and linear. While we see her
+                                    become gradually more anxious and concerned, her transformation into a determined
+                                    survivor feels abrupt and not fully earned. Additionally, some of her actions, like
+                                    interrupting Jack and causing tension in their relationship, feel unnecessary and
+                                    detract from her character's agency.</td>
+                                <td>To improve the character arc for Wendy, consider making her struggle more with the
+                                    decision to stay at the hotel and how it affects her family. Show more moments of
+                                    her being proactive and taking action to protect herself and her son, rather than
+                                    relying on others to save her. Also, consider removing some of the unnecessary
+                                    conflict between her and Jack to make her character more consistent and focused.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jack</td>
+                                <td>Jack starts off as a troubled and frustrated man battling with his own demons while
+                                    trying to be a good husband and father. As the film progresses, his mental state
+                                    deteriorates, leading him to become more and more unhinged, ultimately turning into
+                                    a sadistic killer who is possessed by the hotel's influence.</td>
+                                <td>The character arc for Jack is well-done, showcasing the gradual descent into madness
+                                    and his eventual possession by the hotel. However, it could have benefited from more
+                                    exploration of his relationship with his son and how that contributes to his guilt
+                                    and inner demons.</td>
+                                <td>One suggestion for improving the character arc would be to delve more into Jack's
+                                    past and his relationship with his abusive father, as this could provide more
+                                    context for his struggles with alcoholism and anger. Additionally, exploring his
+                                    relationship with Danny and how that affects his mental state could provide more
+                                    depth to his character.</td>
+                            </tr>
+                            <tr>
+                                <td>Halloran</td>
+                                <td>Halloran starts out as a friendly and wise chef who seems to have a mysterious
+                                    connection with Danny and understands the dark history of the hotel. He is genuinely
+                                    kind and cares about the well-being of others. As the story unfolds, he becomes more
+                                    confident and knowledgeable, with a mysterious air about him. He is always caring
+                                    and concerned for others and remains cool under pressure, determined to get to the
+                                    hotel. However, his arc takes a tragic turn as he meets a gruesome end, serving as a
+                                    reminder of the danger everyone is in at the hotel. </td>
+                                One way to improve Halloran's character arc would be to give him a greater sense of
+                                agency and have him play a more active role in the story. Perhaps he could have
+                                discovered more about the history of the hotel and worked alongside Danny to uncover its
+                                secrets. Alternatively, his death could have been used to further develop the characters
+                                of Wendy and Danny, showing how they cope with the loss of someone who had become a
+                                trusted friend and ally.
+                                <td>While Halloran is an interesting and likable character, his arc ultimately feels
+                                    incomplete due to his sudden and tragic death. It would have been more satisfying to
+                                    see him play a larger role in the story and have his arc reach a more meaningful
+                                    conclusion.</td>
+                                <td>One way to improve Halloran's character arc would be to give him a greater sense of
+                                    agency and have him play a more active role in the story. Perhaps he could have
+                                    discovered more about the history of the hotel and worked alongside Danny to uncover
+                                    its secrets. Alternatively, his death could have been used to further develop the
+                                    characters of Wendy and Danny, showing how they cope with the loss of someone who
+                                    had become a trusted friend and ally.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Tab 5 Content -->
+                <div class="tab-pane pt-4" id="loglines" role="tabpanel" aria-labelledby="loglines-tab">
+                  <p class="text-center">Here are different suggestions of loglines. (Alpha code - some hallucinations)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/pages/table.js"></script>
+    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script
+</body>
+
+</html>
