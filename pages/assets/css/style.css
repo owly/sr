@@ -92,9 +92,6 @@
 .nav-tabs .nav-item{
     padding: 6px 6px 7px 6px !important;
 }
-/* p{
-   word-spacing: 1px; 
-} */
 .bg_success{
     background-color: #CEFFCE;
 }
@@ -132,3 +129,5 @@ table{
         font-size: 16px !important;
     }
 }
+
+  
