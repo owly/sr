@@ -114,6 +114,12 @@ table{
     max-width: 100% !important;
 }
 
+.inputToggle{
+    position: absolute !important;
+    right: 50% !important;
+    top: 30% !important;
+}
+
 /* Media Queries */
 @media screen and (max-width: 600px) {
     .mobile_width{

@@ -175,7 +175,7 @@ Note: The numbers are averaged over all the scenes of the script.
 <div class="switch-labels">
   <span>By Genre</span>
 <label class="switch">
-  <input type="checkbox" id="togBtn">
+  <input class="inputToggle" type="checkbox" id="togBtn">
   <div class="slider round" onclick="myFunction()"></div>
 </label>
   <span>By Title</span>
