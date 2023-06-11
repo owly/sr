@@ -105,8 +105,9 @@ table > thead > tr > th{
     text-align: center;
     vertical-align: middle;
 }
-td{
+td, tr{
    vertical-align: middle;
+   text-align: center;
 }
 table{
     width: 100% !important;
@@ -119,6 +120,31 @@ table{
     right: 50% !important;
     top: 30% !important;
 }
+
+  .form-check-input:checked {
+    background-color:#23BAB1 !important;
+    border-color: #23BAB1;
+    box-shadow: none !important;
+}
+  .form-check-input:focus {
+    box-shadow: none !important;
+}
+
+
+/* Data Table */
+
+.dataTables_info, 
+.dataTables_paginate,
+.dataTables_length,
+.dataTables_filter {
+    display: none !important;
+}
+
+table.dataTable thead .sorting_asc {
+    background-image:none !important;
+}
+
+
 
 /* Media Queries */
 @media screen and (max-width: 600px) {
