@@ -1,55 +1,67 @@
-
 /* Generic */
 
-.bg_primary{
+.bg_primary {
     background-color: #083A54 !important;
 }
-.bg_secondary{
+
+.bg_secondary {
     background-color: #23BAB1 !important;
 }
-.text_primary{
+
+.text_primary {
     color: #083A54 !important;
 }
-.text_secondary{
+
+.text_secondary {
     color: #23BAB1 !important;
+}
+textarea{
+    text-align: left !important;
 }
 
 /* Navbar */
 
-.navBar .nav-item .nav-link{
+.navBar .nav-item .nav-link {
     color: #23BAB1 !important;
     border-bottom: 4px solid #083A54;
     font-weight: bold;
     font-size: 18px;
 }
+
 .navBar .nav-item active .nav-link,
 .navBar .nav-item .nav-link:hover,
 .navBar .nav-item .nav-link:focus {
-  border-color: #23BAB1 !important;
+    border-color: #23BAB1 !important;
 }
+
 .navBar .nav-item {
     margin: 0 30px;
 }
+
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
+}
+
 .navbar-toggler:focus {
-  box-shadow: none !important;
-  }
+    box-shadow: none !important;
+}
+
 .navbar-toggler {
-  border: none !important;
-  }
-  .logo{
+    border: none !important;
+}
+
+.logo {
     border: 3px solid #23BAB1;
-  }
+}
 
 
-  /* Banner Section - Home */
+/* Banner Section - Home */
 
-  .home-banner{
+.home-banner {
     height: 100vh;
-  }
-.banner-text h1{
+}
+
+.banner-text h1 {
     background-color: #083A54;
     opacity: 0.8;
     font-weight: bold;
@@ -57,83 +69,96 @@
     text-decoration: underline;
     padding-bottom: 6px;
 }
+
 .banner-btn:focus,
-.banner-btn{
+.banner-btn {
     background-color: #23BAB1 !important;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
     border: none !important;
 }
-.banner-btn:hover{
-    background-color:#23BAB1 !important;
+
+.banner-btn:hover {
+    background-color: #23BAB1 !important;
     transform: scale(1.1);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
+
 }
+
 /* Tabs */
 
-.nav-tabs{
+.nav-tabs {
     background-color: #083A54 !important;
     border-radius: 8px;
 }
-.nav-tabs .nav-item  button{
+
+.nav-tabs .nav-item button {
     border-radius: 0 !important;
     color: #fff;
     border-radius: 8px !important;
     font-size: 20px;
 }
-.nav-tabs .nav-item  button:hover{
-    border-color:#23BAB1;
+
+.nav-tabs .nav-item button:hover {
+    border-color: #23BAB1;
 }
-.nav-tabs .nav-item .active{
-   background-color: #23BAB1 !important;
-   border-color:#23BAB1;
-   color: #fff;
+
+.nav-tabs .nav-item .active {
+    background-color: #23BAB1 !important;
+    border-color: #23BAB1;
+    color: #fff;
 }
-.nav-tabs .nav-item{
+
+.nav-tabs .nav-item {
     padding: 6px 6px 7px 6px !important;
 }
-.bg_success{
+
+.bg_success {
     background-color: #CEFFCE;
 }
-.bg_danger{
+
+.bg_danger {
     background-color: #edc0c0;
 }
 
-table > thead > tr > th{
+table>thead>tr>th {
     background-color: #083A54 !important;
     color: #fff !important;
     text-align: center;
     vertical-align: middle;
 }
-td, tr{
-   vertical-align: middle;
-   text-align: center;
+
+td,
+tr {
+    vertical-align: middle;
+    text-align: center;
 }
-table{
+
+table {
     width: 100% !important;
     overflow-x: auto !important;
     max-width: 100% !important;
 }
 
-.inputToggle{
+.inputToggle {
     position: absolute !important;
     right: 50% !important;
     top: 30% !important;
 }
 
-  .form-check-input:checked {
-    background-color:#23BAB1 !important;
+.form-check-input:checked {
+    background-color: #23BAB1 !important;
     border-color: #23BAB1;
     box-shadow: none !important;
 }
-  .form-check-input:focus {
+
+.form-check-input:focus {
     box-shadow: none !important;
 }
 
 
 /* Data Table */
 
-.dataTables_info, 
+.dataTables_info,
 .dataTables_paginate,
 .dataTables_length,
 .dataTables_filter {
@@ -141,25 +166,26 @@ table{
 }
 
 table.dataTable thead .sorting_asc {
-    background-image:none !important;
+    background-image: none !important;
 }
 
 
 
 /* Media Queries */
 @media screen and (max-width: 600px) {
-    .mobile_width{
+    .mobile_width {
         width: 100% !important;
     }
+
     .navBar .nav-item {
         margin: 0 10px;
     }
-    .logo{
+
+    .logo {
         width: 52px;
     }
-    .banner-btn{
+
+    .banner-btn {
         font-size: 16px !important;
     }
 }
-
-  
