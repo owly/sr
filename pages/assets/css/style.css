@@ -15,6 +15,17 @@
 .text_secondary {
     color: #23BAB1 !important;
 }
+.primary_btn{
+    border: 2px solid #083A54;
+    transition: all 0.3s ease-in-out !important;
+}
+.primary_btn:hover,
+.primary_btn:focus{
+    border: 2px solid #083A54;
+    background-color: #083A54;
+    color: #fff;
+}
+
 textarea{
     text-align: left !important;
 }
@@ -154,6 +165,20 @@ table {
 .form-check-input:focus {
     box-shadow: none !important;
 }
+
+.link{
+    text-decoration: none;
+}
+.link:hover{
+    text-decoration: underline;
+}
+
+.editable-text {
+    margin: 0 !important; 
+    width: 100%;
+    white-space: pre-line !important;
+    text-align: left !important;
+  }
 
 
 /* Data Table */
