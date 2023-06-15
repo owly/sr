@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden !important;
+}
+
 /* Generic */
 
 .bg_primary {
@@ -98,7 +102,7 @@ textarea:focus{
 }
 
 
-/* Banner Section - Home */
+/*  Home Page */
 
 .home-banner {
     height: 100vh;
@@ -124,8 +128,33 @@ textarea:focus{
     background-color: #23BAB1 !important;
     transform: scale(1.1);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
 }
+.home_p{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.featureItem{
+    /* border: 1px solid #083A54; */
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.featureItem:hover{
+    transform: translateY(-8px);
+}
+.transition{
+    transition: all 0.3s ease-in-out !important;
+}
+.transition:hover{
+    transform: translateY(-8px) !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.border_primary{
+    border: 2px solid #083A54;
+}
+
+/* Footer */
+
+
 
 /* Tabs */
 
@@ -245,8 +274,33 @@ table.dataTable thead .sorting_asc {
     text-decoration: underline;
 }
 
+
+
+
 /* Media Queries */
+
+@media screen and (max-width: 993px) {
+    .featureItem{
+        height: fit-content !important;
+    }
+}
+@media screen and (max-width: 769px) {
+    .video{
+    height: 315px !important;
+    } 
+}
+
 @media screen and (max-width: 600px) {
+
+    .home_p{
+        font-size: 16px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    h4{
+        font-size: 18px;
+    }
     .mobile_width {
         width: 100% !important;
     }
@@ -262,4 +316,7 @@ table.dataTable thead .sorting_asc {
     .banner-btn {
         font-size: 16px !important;
     }
+    .video{
+        height: auto !important;
+        }
 }
