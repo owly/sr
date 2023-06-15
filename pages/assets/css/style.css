@@ -243,7 +243,7 @@ table.dataTable thead .sorting_asc {
 }
 #subLink:hover{
     text-decoration: underline;
-
+}
 
 /* Media Queries */
 @media screen and (max-width: 600px) {
