@@ -1,6 +1,20 @@
-body {
-    overflow-x: hidden !important;
+html,
+body{
+    height: 100% !important;
 }
+body {
+    overflow-x: hidden !important; 
+    display: flex;
+    flex-direction: column; 
+}
+
+@media screen and (max-height: 100vh) {
+    body {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+  }
 
 /* Generic */
 
@@ -38,6 +52,11 @@ body {
     color: #fff !important;
     transition: all 0.3s ease-in-out !important;
 }
+.secondary_btn:hover {
+    background-color: #0c4b6d !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 55px !important;
+    
+}
 
 .inputFile::-webkit-file-upload-button {
     background-color: #083A54 !important;
@@ -70,8 +89,12 @@ textarea:focus {
 }
 
 .layout_margin {
-    margin-top: 120px !important;
+    margin-top: 60px !important;
 }
+
+main {
+    flex: 1 !important;
+  }
 
 /* Navbar */
 
@@ -166,13 +189,12 @@ textarea:focus {
 }
 
 /* Footer */
-
-footer {
-    position: fixed;
+/* footer {
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-}
+} */
 footer ul li a:hover {
     color: #fff !important;
 }
@@ -300,6 +322,23 @@ table.dataTable thead .sorting_asc {
     text-decoration: underline;
 }
 
+/* Buy */
+
+         
+.btn_buy {
+    background-image: linear-gradient(to right, #083A54 0%, #26D0CE  51%, #083A54  100%);
+    transition: 0.5s;
+    background-size: 200% auto;           
+    box-shadow: 0 0 20px #eee;
+    display: block;
+  }
+
+  .btn_buy:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
 
 
 
