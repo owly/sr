@@ -1,20 +1,20 @@
 
 
 const movies = [
-    ["a few good men", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
+    ["a few good men", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 4.2],
     ["A Quiet Place", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
-    ["American beauty", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
-    ["American hustle", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
-    ["Arsenic and old lace", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
+    ["American beauty", 8.1, 7.8, 6.9, 6, 8.3, 7.4, 2.2],
+    ["American hustle", 8.1, 7.8, 6.9, 5.9, 8.3, 7.4, 8.2],
+    ["Arsenic and old lace", 8.1, 7.8, .9, 7.9, 8.3, 7.4, 8.2],
     ["Avatar", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
     ["Birdman", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
-    ["Black mirror 304", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
+    ["Black mirror 304", 8.1, 3.2, 6.9, 7.9, 8.3, 7.4, 8.2],
     ["Black panther", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
     ["Blade Runner", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
-    ["Bonnie and Clyde", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
+    ["Bonnie and Clyde", 8.1, 4.2, 6.9, 7.9, 8.3, 7.4, 8.2],
     ["Boyz in the hood", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
     ["Casablanca", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
-    ["citizen Kane", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
+    ["citizen Kane", 8.1, 7.8, 6.9, 9.3, 8.3, 7.4, 8.2],
     ["Clerks", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
     ["Dead pool", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
     ["die hard", 8.1, 7.8, 6.9, 7.9, 8.3, 7.4, 8.2],
@@ -71,36 +71,53 @@ const movies = [
 const tableBody = document.getElementById("tableBody");
 
 movies.map(movie => {
-    const row = document.createElement("tr");
-    
-    // Create the link element
-    const link = document.createElement("a");
-    link.href = "#" + movie[0]; // Set the link URL
-    
+  const row = document.createElement("tr");
+
+  // Create the link element
+  const link = document.createElement("a");
+  link.href = "#" + movie[0]; // Set the link URL
+
+  const cell = document.createElement("td");
+  cell.appendChild(link);
+
+  // Set the link text to the movie title
+  link.textContent = movie[0];
+
+  // Append the link cell to the row
+  row.appendChild(cell);
+
+  // Iterate over the rest of the movie data
+  for (let index = 1; index < movie.length; index++) {
+    const data = movie[index];
     const cell = document.createElement("td");
-    cell.appendChild(link);
-    
-    // Set the link text to the movie title
-    link.textContent = movie[0];
-    
-    // Append the link cell to the row
-    row.appendChild(cell);
-    
-    // Iterate over the rest of the movie data
-    for (let index = 1; index < movie.length; index++) {
-        const data = movie[index];
-        const cell = document.createElement("td");
-        cell.textContent = data;
-        if (index === 1) {
-            cell.style.fontWeight = "bold";
-        }
-        row.appendChild(cell);
+    cell.textContent = data;
+    if (index === 1) {
+      cell.style.fontWeight = "bold";
     }
-    
-    // Append the row to the table body
-    tableBody.appendChild(row);
+    applyBackgroundColor(cell, data);
+    row.appendChild(cell);
+  }
+
+  // Append the row to the table body
+  tableBody.appendChild(row);
 });
 
+function applyBackgroundColor(cell, value) {
+  if (value >= 8) {
+    cell.style.backgroundColor = "green";
+  } else if (value >= 7 && value < 8) {
+    cell.style.backgroundColor = "lightgreen";
+  } else if (value >= 6 && value < 7) {
+    cell.style.backgroundColor = "yellow";
+  } else if (value >= 5 && value < 6) {
+    cell.style.backgroundColor = "rgba(255, 255, 145, 0.984)";
+  } else if (value >= 4 && value < 5) {
+    cell.style.backgroundColor = "pink";
+  } else if (value < 4) {
+    cell.style.backgroundColor = "red";
+  }
+}
+
 function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -47,36 +47,36 @@ var customTitles = [
 var customNumbers = [
     [7.5, 8, 7, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
+    [7, 2, 7, 8, 8, 6, 4],
+    [2, 8, 7, 8, 8, 6, 4],
+    [7, 8, 7, 8, 8, 6, 4],
+    [4, 8, 7, 8, 8, 6, 5],
+    [7, 3, 4, 8, 8, 6, 4],
+    [7, 8, 7, 8, 6, 6, 4],
+    [7, 8, 7, 8, 8, 6, 4],
+    [7, 8, 7, 8, 8, 6, 3],
+    [7, 8, 7, 8, 8, 6, 6],
+    [7, 8, 7, 8, 8, 6, 9],
+    [7, 8, 7, 8, 8, 6, 8],
+    [7, 8, 7, 8, 8, 6, 4],
+    [7, 8, 7, 8, 8, 6, 7],
     [7, 8, 7, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
+    [7, 8, 7, 8, 8, 6, 8],
     [7, 8, 7, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
+    [7, 8, 7, 8, 8, 6, 6],
+    [2, 8, 7, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
+    [4, 8, 7, 8, 8, 6, 5],
+    [7, 3, 4, 8, 8, 6, 4],
+    [7, 8, 7, 6, 8, 6, 4],
+    [7, 8, 7, 8, 5, 6, 3],
+    [2, 8, 7, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
-    [7, 8, 7, 8, 8, 6, 4],
+    [4, 8, 7, 8, 8, 6, 5],
+    [7, 3, 4, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
     [7, 8, 7, 8, 8, 6, 4],
@@ -108,6 +108,23 @@ for (var i = 0; i < customNumbers.length; i++) {
     for (var j = 0; j < currentCustomNumbers.length; j++) {
         var valueCell = document.createElement("td");
         valueCell.textContent = currentCustomNumbers[j];
+        
+        // Set background color based on value
+        var value = currentCustomNumbers[j];
+        if (value >= 7) {
+            valueCell.style.backgroundColor = "green";
+        } else if (value >= 6 && value < 7) {
+            valueCell.style.backgroundColor = "lightgreen";
+        } else if (value >= 5 && value < 6) {
+            valueCell.style.backgroundColor = "yellow";
+        } else if (value >= 4 && value < 5) {
+            valueCell.style.backgroundColor = "rgba(255, 255, 145, 0.984)";
+        } else if (value >= 3 && value < 4) {
+            valueCell.style.backgroundColor = "pink";
+        } else {
+            valueCell.style.backgroundColor = "red";
+        }
+        
         row.appendChild(valueCell);
     }
 

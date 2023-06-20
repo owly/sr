@@ -27,25 +27,32 @@
     ::-webkit-scrollbar-thumb:hover {
         background-color: #23BAB1 !important;
     }
+
+    .table-bordered th:nth-child(8),
+    .table-bordered td:nth-child(8) {
+        border-right: 6px solid black;
+    }
 </style>
 
 <body>
 
-       <!-- Navbar -->
+    <!-- Navbar -->
 
-       <nav class="navbar bg_primary navbar-expand-lg bg-body-tertiary">
+    <nav id="navbar"  class="navbar bg_primary navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"> <img class="rounded-5 logo" width="50"
-                    src="./assets/images/logo-2.png" alt=""></a>
+                    src="/pages/assets/images/logo-2.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+                <span class="navbar-toggler-icon">
+                    <i class="bi bi-list"></i>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav navBar mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/home.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Examples</a>
@@ -54,12 +61,11 @@
                         <a class="nav-link" href="#">Your Script</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="/pages/blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="/pages/contact.html">Contact</a>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -260,17 +266,31 @@
                             class="text-center bg_primary text-white border-bottom border-5 py-2 shadow-lg rounded-top-2">
                             <h3>1 - Church Service Interrupted</h3>
                         </div>
-                        <p class="mb-0">
-                            Overall Grade: <span class="fw-bold"> 9.0</span>
-                            - Concept: <span class="fw-bold">8</span>
-                            - Plot: <span class="fw-bold">9</span>
-                            - Characters: <span class="fw-bold">8</span>
-                            - Dialogue: <span class="fw-bold">9</span>
-                        </p>
-                        <p class="">
-                            Emotional Impact: <span class="fw-bold"> 7.0</span>
-                            - Conflict level: <span class="fw-bold">7.0</span>
-                        </p>
+
+                        <ul class="d-flex flex-wrap align-items-center justify-content-around list-unstyled pt-4">
+                            <li class="py-2 mb-3 px-3 mobile_width shadow-lg rounded-3 d-flex align-items-center">
+                                Overall: <span class="fw-bold fs-5 ms-3">9.0</span></li>
+                            <li class="py-2 mb-3 px-3 mobile_width shadow-lg rounded-3 d-flex align-items-center">
+                                Concept: <span class="fw-bold fs-5 ms-3">8</span></li>
+                            <li class="py-2 mb-3 px-3 mobile_width shadow-lg rounded-3 d-flex align-items-center">Plot:
+                                <span class="fw-bold fs-5 ms-3">9</span>
+                            </li>
+                            <li class="py-2 mb-3 px-3 mobile_width shadow-lg rounded-3 d-flex align-items-center">
+                                Characters:
+                                <span class="fw-bold fs-5 ms-3">8</span>
+                            </li>
+                            <li class="py-2 mb-3 px-3 mobile_width shadow-lg rounded-3 d-flex align-items-center">
+                                Dialogue:
+                                <span class="fw-bold fs-5 ms-3">9</span>
+                            </li>
+                            <li class="py-2 mb-3 px-3 mobile_width shadow-lg rounded-3 d-flex align-items-center">Plot:
+                                <span class="fw-bold fs-5 ms-3">8.0</span>
+                            </li>
+                            <li class="py-2 mb-3 px-3 mobile_width shadow-lg rounded-3 d-flex align-items-center">
+                                Emotional Impact: <span class="fw-bold fs-5 ms-3">7.0</span></li>
+                            <li class="py-2 mb-3 px-3 mobile_width shadow-lg rounded-3 d-flex align-items-center">
+                                Conflict level: <span class="fw-bold fs-5 ms-3">7.0</span></li>
+                        </ul>
                     </div>
 
                     <div class="row">
@@ -481,28 +501,32 @@ take all the
                     </div>
 
                     <div>
-                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Jekyll: </span> Dr. Jekyll is a
+                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Jekyll: </span> Dr. Jekyll
+                            is a
                             brilliant and passionate scientist who is driven by his research and willing to take risks
                             to prove his theories. He is kindhearted and compassionate, but also conflicted by emotional
                             turmoil and distracted by outside events. He struggles with guilt and despair as he cannot
                             control the consequences of his split personality, which often leads to reckless behavior,
                             putting himself and those around him in danger.:
                         </p>
-                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Mr. Hyde: </span> Mr. Hyde is a
+                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Mr. Hyde: </span> Mr. Hyde
+                            is a
                             dark, seductive, and manipulative character who revels in causing chaos and violence. He is
                             highly aggressive and violent, with a complete disregard for human life. He is obsessed with
                             finding Jekyll and will stop at nothing to do so. Hyde's thirst for power and violence
                             threatens to consume both him and Jekyll. He is Jekyll's darker alter-ego who grows
                             increasingly bold and reckless as the story progresses.:
                         </p>
-                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Poole: </span> Poole is a caring
+                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Poole: </span> Poole is a
+                            caring
                             and practical butler who is deeply loyal to Dr. Jekyll. He is often exasperated by Jekyll's
                             forgetfulness, but remains steadfast in his duties. Poole is concerned about his master's
                             well-being and tries his best to understand and help him in his struggles.:
                         </p>
 
 
-                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Beatrix: </span> Beatrix is a
+                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Beatrix: </span> Beatrix is
+                            a
                             passionate and loving woman with a strong-willed personality. She is emotional, vulnerable,
                             and defensive about her relationships, but also caring and understanding to the people she
                             loves. Her presence is an important driving force to Jekyll, and her potential loss weighs
@@ -511,13 +535,15 @@ take all the
                             for the sake of their love. She tries her best to support and comfort Jekyll, but ultimately
                             cannot handle the revelations of his monstrous actions.:
                         </p>
-                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Sir Charles: </span> Sir Charles
+                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Sir Charles: </span> Sir
+                            Charles
                             is a middle-aged man who is nostalgic and emotional for his deceased wife. He is
                             conservative and disapproves of Dr. Jekyll's research and wishes for him to focus on his
                             medical career instead. He is also an overbearing father who tries to control Beatrix's
                             actions and disapproves of her relationship with Jekyll.:
                         </p>
-                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Ivy Pearson: </span> Ivy Pearson
+                        <p class="d-flex flex-column text-center"><span class="fw-bold fs-5">Ivy Pearson: </span> Ivy
+                            Pearson
                             is a young woman working as a performer at the Palace of Varieties. She is initially
                             cautious of Mr. Hyde's attention but becomes intrigued by his passion and wealth. Ivy is
                             vulnerable to manipulation and degradation, but she also has a sense of curiosity and a
@@ -811,7 +837,7 @@ take all the
                         hallucinations)</h5>
 
                     <table class="table table-striped table-bordered table-responsive mt-5">
-    
+
                         <tbody>
                             <tr>
 
@@ -846,9 +872,10 @@ take all the
 
                 <!-- Tab 6 Content -->
                 <div class="tab-pane pt-4" id="structure" role="tabpanel" aria-labelledby="structure-tab">
-                    <div class="text-center bg_primary text-white border-bottom border-5 py-2 shadow-lg rounded-top-2">
-                        <h3 class="text-center">Here are different story structures and how the script fits each one.
-                        </h3>
+                    <div
+                        class="text-center bg_secondary text-white border-bottom border-5 py-0 shadow-lg rounded-top-3">
+                        <h4 class="text-center">Here are different story structures and how the script fits each one.
+                        </h4>
                     </div>
                     <div>
                         <h5 class="my-5 fw-semibold">Story Structure 1: The Hero's Journey
@@ -1019,48 +1046,67 @@ take all the
                             </tr>
 
                             <tr>
-                                <td class="fw-bold text-uppercase">Disapproving father	</td>
+                                <td class="fw-bold text-uppercase">Disapproving father </td>
                                 <td>
-                                    Dr. Jekyll contends with Sir Charles, who disapproves of his research and his intention to marry his daughter.	
+                                    Dr. Jekyll contends with Sir Charles, who disapproves of his research and his
+                                    intention to marry his daughter.
                                 </td>
                                 <td>
-                                    This trope is used to create conflict within the story and set up obstacles for the main character. It is often used in romantic stories to show the difficulties faced by the couple. An example of this trope can be found in the movie 'Father of the Bride' where the father disapproves of his daughter's choice of groom.
-	
+                                    This trope is used to create conflict within the story and set up obstacles for the
+                                    main character. It is often used in romantic stories to show the difficulties faced
+                                    by the couple. An example of this trope can be found in the movie 'Father of the
+                                    Bride' where the father disapproves of his daughter's choice of groom.
+
                                 </td>
                             </tr>
 
                             <tr>
-                                <td class="fw-bold text-uppercase"> Inner conflict	</td>
+                                <td class="fw-bold text-uppercase"> Inner conflict </td>
                                 <td>
-                                    He saves a girl from a violent encounter and they share a flirtatious conversation, which sets up Jekyll's inner conflict and desire for intimacy.	
+                                    He saves a girl from a violent encounter and they share a flirtatious conversation,
+                                    which sets up Jekyll's inner conflict and desire for intimacy.
                                 </td>
                                 <td>
-                                    This trope is used to show the main character's struggle with their emotions and desires. It is often used to add depth to the character and create tension within the story. An example of this trope can be found in the TV show 'Mad Men' where the main character Don Draper is shown to have a constant inner conflict.
+                                    This trope is used to show the main character's struggle with their emotions and
+                                    desires. It is often used to add depth to the character and create tension within
+                                    the story. An example of this trope can be found in the TV show 'Mad Men' where the
+                                    main character Don Draper is shown to have a constant inner conflict.
 
                                 </td>
                             </tr>
                             <tr>
-                                <td class="fw-bold text-uppercase">Dangerous alter ego	 </td>
+                                <td class="fw-bold text-uppercase">Dangerous alter ego </td>
                                 <td>
-                                    Jekyll transforms into Mr. Hyde and revels in his newfound power before being interrupted by Poole.	
+                                    Jekyll transforms into Mr. Hyde and revels in his newfound power before being
+                                    interrupted by Poole.
                                 </td>
                                 <td>
-                                    This trope is used to create tension within the story and show the main character's struggle with their alter ego. It is often used in horror or thriller stories to add an element of danger or unpredictability. An example of this trope can be found in the movie 'Split' where the main character has multiple personalities, some of which are dangerous.
+                                    This trope is used to create tension within the story and show the main character's
+                                    struggle with their alter ego. It is often used in horror or thriller stories to add
+                                    an element of danger or unpredictability. An example of this trope can be found in
+                                    the movie 'Split' where the main character has multiple personalities, some of which
+                                    are dangerous.
 
 
                                 </td>
                             </tr>
                             <tr>
-                                <td class="fw-bold text-uppercase">Tragic ending	 </td>
+                                <td class="fw-bold text-uppercase">Tragic ending </td>
                                 <td>
-                                    Later, the police arrive at Jekyll's lab to arrest Hyde, who furiously wrecks everything before being fatally shot. In his final moments, Hyde transforms back into Jekyll's form, seemingly indicating that death is the only way to escape his alter ego.	
+                                    Later, the police arrive at Jekyll's lab to arrest Hyde, who furiously wrecks
+                                    everything before being fatally shot. In his final moments, Hyde transforms back
+                                    into Jekyll's form, seemingly indicating that death is the only way to escape his
+                                    alter ego.
                                 </td>
                                 <td>
-                                    This trope is used to create a sense of tragedy and loss within the story. It is often used to convey a message or moral to the audience. An example of this trope can be found in the play 'Romeo and Juliet' where the tragic ending serves to highlight the consequences of feuding and hatred.
+                                    This trope is used to create a sense of tragedy and loss within the story. It is
+                                    often used to convey a message or moral to the audience. An example of this trope
+                                    can be found in the play 'Romeo and Juliet' where the tragic ending serves to
+                                    highlight the consequences of feuding and hatred.
 
                                 </td>
                             </tr>
-                       
+
                         </tbody>
                     </table>
                 </div>
@@ -1081,60 +1127,74 @@ take all the
                             <tr>
                                 <td>Ethics</td>
                                 <td>
-                                    Dr. Jekyll stands up for his ethical beliefs when confronted by colleagues in a hospital and defends his research on the soul to his colleagues at a dinner party.	
+                                    Dr. Jekyll stands up for his ethical beliefs when confronted by colleagues in a
+                                    hospital and defends his research on the soul to his colleagues at a dinner party.
                                 </td>
                                 <td>
-                                    This theme is about Dr. Jekyll's unwavering dedication to his research and the struggles he faces while trying to maintain his ethical standards.
+                                    This theme is about Dr. Jekyll's unwavering dedication to his research and the
+                                    struggles he faces while trying to maintain his ethical standards.
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Dual Identity </td>
+                                <td>
+                                    Dr. Jekyll transforms into Mr. Hyde and has an affair with Ivy Pearson. He later
+                                    transforms back into Jekyll and confesses to Dr. Lanyon about his transformations
+                                    and the murder he committed.
+                                </td>
+                                <td>
+                                    This theme explores the duality of Dr. Jekyll's personality and the conflict he
+                                    faces between his good and evil sides.
+
 
                                 </td>
                             </tr>
 
                             <tr>
-                                <td>Dual Identity		</td>
+                                <td>Love and Relationships </td>
                                 <td>
-                                    Dr. Jekyll transforms into Mr. Hyde and has an affair with Ivy Pearson. He later transforms back into Jekyll and confesses to Dr. Lanyon about his transformations and the murder he committed.	    	
+                                    Dr. Jekyll's relationship with Beatrix is threatened by her disapproving father.
+                                    Hyde seeks out Ivy Pearson and has an affair with her before she is choked to death.
+                                    Jekyll tells Beatrix he's not worth her love and decides to leave her, but his
+                                    transformation starts to happen again.
                                 </td>
                                 <td>
-                                    This theme explores the duality of Dr. Jekyll's personality and the conflict he faces between his good and evil sides.
-
-	
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Love and Relationships		</td>
-                                <td>
-                                    Dr. Jekyll's relationship with Beatrix is threatened by her disapproving father. Hyde seeks out Ivy Pearson and has an affair with her before she is choked to death. Jekyll tells Beatrix he's not worth her love and decides to leave her, but his transformation starts to happen again.		
-                                </td>
-                                <td>
-                                    This theme explores the various relationships and emotions that the characters experience throughout the screenplay and the consequences that come with them.
+                                    This theme explores the various relationships and emotions that the characters
+                                    experience throughout the screenplay and the consequences that come with them.
 
 
                                 </td>
                             </tr>
                             <tr>
-                                <td>Power and Control	</td>
+                                <td>Power and Control </td>
                                 <td>
-                                    After becoming Mr. Hyde, Jekyll revels in his newfound power. His relationship with Ivy Pearson turns manipulative and cruel. Hyde later wrecks everything in his lab while being pursued by the police.	
+                                    After becoming Mr. Hyde, Jekyll revels in his newfound power. His relationship with
+                                    Ivy Pearson turns manipulative and cruel. Hyde later wrecks everything in his lab
+                                    while being pursued by the police.
                                 </td>
                                 <td>
-                                    This theme is about the corrupting influence of power and the desire for control that the characters exhibit.
+                                    This theme is about the corrupting influence of power and the desire for control
+                                    that the characters exhibit.
 
 
 
                                 </td>
                             </tr>
                             <tr>
-                                <td>Death and Escapism		 </td>
+                                <td>Death and Escapism </td>
                                 <td>
-                                    Hyde's transformation back into Jekyll's form seemingly indicates that death is the only way to escape his alter ego.	
+                                    Hyde's transformation back into Jekyll's form seemingly indicates that death is the
+                                    only way to escape his alter ego.
                                 <td>
-                                    This theme explores the idea of death and its relation to escapism. It suggests that death can be seen as an escape from one's problems and inner turmoil.
+                                    This theme explores the idea of death and its relation to escapism. It suggests that
+                                    death can be seen as an escape from one's problems and inner turmoil.
 
 
                                 </td>
                             </tr>
-                       
+
                         </tbody>
                     </table>
                 </div>
@@ -1163,11 +1223,12 @@ take all the
         </div>
     </footer>
 
-
-    <script src="./disp.js"></script>
-    <script src=".script.js"></script>
+    <script src="./navbar.js"></script>
+    <script src="/pages/disp.js"></script>
+    <script src="/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
