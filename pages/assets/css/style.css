@@ -106,14 +106,14 @@ main {
 
 .navBar .nav-item .nav-link {
     color: #fff !important;
-    border-bottom: 4px solid #23BAB1;
+    border-bottom: 4px solid #083A54;
     font-weight: bold;
     font-size: 18px;
 }
 
-.navBar .nav-item active .nav-link,
-.navBar .nav-item .nav-link:hover,
-.navBar .nav-item .nav-link:focus {
+#navbar .nav-item.active .nav-link,
+#navbar .nav-item .nav-link:hover,
+#navbar .nav-item .nav-link:focus {
     border-color: #fff !important;
 }
 
@@ -145,12 +145,12 @@ main {
 }
 
 .banner-text h1 {
-    background-color: #083A54;
-    opacity: 0.8;
     font-weight: bold;
-    font-size: 3.5vw;
-    text-decoration: underline;
-    padding-bottom: 6px;
+    font-size: 3.2vw;
+    /* text-decoration: underline; */
+}
+.banner-text p {
+  font-size: 2vw;
 }
 
 .banner-btn:focus,
@@ -337,6 +337,12 @@ table.dataTable thead .sorting_asc {
 .blog a {
     color: #083A54 !important;
 }
+.blog_border{
+    border: 4px solid #23BAB1;
+}
+.primary_border{
+    border-bottom: 3px double #23BAB1;
+}
 
 #subLink {
     color: #23BAB1 !important;
@@ -381,12 +387,21 @@ table.dataTable thead .sorting_asc {
     .featureItem {
         height: fit-content !important;
     }
+    .home-banner {
+        height: 70vh;
+    }
 }
 
 @media screen and (max-width: 769px) {
     .video {
         height: 315px !important;
     }
+    .home-banner {
+        height: 60vh;
+    }
+    .banner-text p {
+        font-size: 4vw !important;
+      }
 }
 
 @media screen and (max-width: 600px) {
@@ -416,7 +431,7 @@ table.dataTable thead .sorting_asc {
     }
 
     .banner-btn {
-        font-size: 16px !important;
+        font-size: 13px !important;
     }
 
     .video {
@@ -426,6 +441,9 @@ table.dataTable thead .sorting_asc {
     footer p,
     footer li {
         font-size: 14px;
+    }
+    .home-banner {
+        height: 35vh;
     }
 
 }
