@@ -2,7 +2,7 @@ var tableBody = document.getElementById("table-body");
 var customTitles = [
     "The Introduction",
     "Danny and Wendy discuss moving to the hotel",
-    "",
+    "Job News and Bloody Hallways",
     "Job News and Bloody Hallways",
     "Doctor's Examination",
     "Conventional Doctor Visit",
@@ -33,7 +33,7 @@ var customTitles = [
     "Halloran Makes Plans to Get to Overlook Hotel",
     "Halloran travels through a snowstorm",
     "Wendy Finds Jack's Typewriter",
-    "",
+    "JACK and WENDY's Conflict",
     "JACK and WENDY's Conflict",
     "Wendy Escapes to the Snowcat",
     "Jack and Grady's Conversation",
@@ -108,7 +108,7 @@ for (var i = 0; i < customNumbers.length; i++) {
     for (var j = 0; j < currentCustomNumbers.length; j++) {
         var valueCell = document.createElement("td");
         valueCell.textContent = currentCustomNumbers[j];
-        
+
         // Set background color based on value
         var value = currentCustomNumbers[j];
         if (value >= 7) {
@@ -124,9 +124,63 @@ for (var i = 0; i < customNumbers.length; i++) {
         } else {
             valueCell.style.backgroundColor = "red";
         }
-        
+
         row.appendChild(valueCell);
     }
 
     tableBody.appendChild(row);
 }
+
+
+// Modal
+
+// Get all the <td> elements in the second column
+var fullAnalysisCells = document.querySelectorAll("#table-body td:nth-child(2)");
+
+// Add click event listener to each <td> element
+fullAnalysisCells.forEach(function (cell, index) {
+    cell.addEventListener("click", function () {
+
+        var rowIndex = cell.parentNode.rowIndex;
+
+        var title = customTitles[rowIndex - 1];
+
+        // Get the overall grade from the corresponding row
+        var overallGrade = document.querySelector("#table-body tr:nth-child(" + rowIndex + ") td:nth-child(4)").textContent;
+
+        var serialNumber = index + 1;
+
+        // Format the title with the serial number and overall grade
+        var formattedTitle = "" + serialNumber + " - " + title + " - " + "Grade: " + overallGrade;
+
+        // Open the Bootstrap modal and set its title
+        var modalTitle = document.querySelector("#tabsModal .modal-title");
+        modalTitle.textContent = formattedTitle;
+
+        var modal = new bootstrap.Modal(document.getElementById("tabsModal"));
+        modal.show();
+    });
+
+    // Custom Styling
+    cell.style.cursor = "pointer";
+    cell.style.textDecoration = "underline";
+    cell.style.color = "#0EBBB2";
+});
+
+// Analysis and Script Switch Toggle
+
+$(document).ready(function () {
+    $('input[name="contentToggle"]').change(function () {
+        var selectedOption = $(this).attr('id');
+        if (selectedOption === 'analysisToggle') {
+            $('.analysisContent').show();
+            $('.scriptContent').hide();
+        } else if (selectedOption === 'scriptToggle') {
+            $('.analysisContent').hide();
+            $('.scriptContent').show();
+        }
+    });
+});
+
+
+
