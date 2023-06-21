@@ -83,6 +83,9 @@ movies.map(movie => {
   // Set the link text to the movie title
   link.textContent = movie[0];
 
+  link.style.color = "black";
+  link.style.fontWeight = "bold";
+
   // Append the link cell to the row
   row.appendChild(cell);
 
