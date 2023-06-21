@@ -140,9 +140,6 @@ main {
 
 /*  Home Page */
 
-.home-banner {
-    height: 100vh;
-}
 
 .banner-text h1 {
     font-weight: bold;
@@ -386,17 +383,11 @@ table.dataTable thead .sorting_asc {
     .featureItem {
         height: fit-content !important;
     }
-    .home-banner {
-        height: 70vh;
-    }
 }
 
 @media screen and (max-width: 769px) {
     .video {
         height: 315px !important;
-    }
-    .home-banner {
-        height: 60vh;
     }
     .banner-text p {
         font-size: 4vw !important;
@@ -440,9 +431,6 @@ table.dataTable thead .sorting_asc {
     footer p,
     footer li {
         font-size: 14px;
-    }
-    .home-banner {
-        height: 35vh;
     }
 
 }
