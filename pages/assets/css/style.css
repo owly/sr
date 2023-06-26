@@ -12,8 +12,8 @@ body {
 @media screen and (max-height: 100vh) {
     body {
         min-height: 100vh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
+        /* display: grid; */
+        /* grid-template-rows: auto 1fr auto; */
     }
 }
 
@@ -63,6 +63,11 @@ body {
 .inputFile::-webkit-file-upload-button {
     background-color: #083A54 !important;
     color: #fff !important;
+}
+
+.table {
+    overflow-x: auto !important;
+    width: 100% !important;
 }
 
 a {
@@ -192,7 +197,7 @@ main {
     letter-spacing: 1px;
 }
 
-.features_section{
+.features_section {
     background-color: #e8f3f2;
 }
 
@@ -224,6 +229,7 @@ main {
 footer ul li a:hover {
     color: #23BAB1 !important;
 }
+
 footer ul li a {
     color: #fff !important;
 }
@@ -407,7 +413,8 @@ table.dataTable thead .sorting_asc {
 .socialIcons i:hover {
     color: #23BAB1 !important;
 }
-.below_section button{
+
+.below_section button {
     color: #fff !important;
 }
 
@@ -418,7 +425,8 @@ table.dataTable thead .sorting_asc {
     .featureItem {
         height: fit-content !important;
     }
-    .text_center_lg{
+
+    .text_center_lg {
         text-align: center !important;
     }
 }

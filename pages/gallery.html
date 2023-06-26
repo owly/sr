@@ -39,6 +39,17 @@
         background-color: #fff;
         z-index: 999;
     }
+
+    .table-container {
+        overflow-x: auto !important;
+        max-width: 100% !important;
+    }
+
+    .table-responsive {
+        display: inline-block !important;
+        overflow: auto !important;
+        width: 100% !important;
+    }
 </style>
 
 <body>
@@ -95,26 +106,29 @@
         </div>
 
 
-        <div class="table-responsive">
-            <table id="myTable" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="sorting">Movie Title</th>
-                        <th class="sorting">Overall</th>
-                        <th class="sorting">Concept</th>
-                        <th class="sorting">Plot</th>
-                        <th class="sorting">Characters</th>
-                        <th class="sorting">Dialogue</th>
-                        <th class="sorting">Emotional Impact</th>
-                        <th class="sorting">Conflict</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    
-                </tbody>
-            </table>
+        <div class="table-container">
+            <div class="table-responsive">
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="sorting">Movie Title</th>
+                            <th class="sorting">Overall</th>
+                            <th class="sorting">Concept</th>
+                            <th class="sorting">Plot</th>
+                            <th class="sorting">Characters</th>
+                            <th class="sorting">Dialogue</th>
+                            <th class="sorting">Emotional Impact</th>
+                            <th class="sorting">Conflict</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Table content goes here -->
+                    </tbody>
+                </table>
+            </div>
         </div>
-        
+
+
 
     </div>
 
@@ -162,7 +176,7 @@
             });
         });
     </script>
-     <script src="./navbar.js"></script>
+    <script src="./navbar.js"></script>
     <script src="./gallery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
