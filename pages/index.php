@@ -1,9 +1,43 @@
-<?php
-    $title = "AI-Powered Screenplay Analysis | ScriptReader.ai";
-    $description = "Improve your screenplay with AI-driven feedback from ScriptReader.ai. Get detailed critiques, suggestions 
-for every scene, and elevate your script to the next level."; 
-include 'head.php'; 
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="./navbar.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets//css//style.css">
+
+    <style>
+        ::-webkit-scrollbar {
+            background-color: #083A54 !important;
+            width: 8px;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #23BAB1 !important;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #23BAB1 !important;
+        }
+    </style>
+
+<title>AI-Powered Screenplay Analysis | ScriptReader.ai</title>
+</head>
+ 
   <link href="./css/normalize.css" rel="stylesheet" type="text/css" />
   <link href="./css/webflow.css" rel="stylesheet" type="text/css" />
   <link href="./css/lander-409e35.webflow.css" rel="stylesheet" type="text/css" /> 
@@ -30,12 +64,36 @@ include 'head.php';
   <link href="http://api.writesonic.com/static/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
   <link href="http://api.writesonic.com/static/images/webclip.png" rel="apple-touch-icon" />
   <script src="https://unpkg.com/feather-icons"></script> 
-<?php
-echo "<body>"; 
-include("headernav.php");
+<body>      <nav id='navbar' class="navbar bg_primary navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.php"> <img class="rounded-circle logo" height='40'width="40"
+                    src="./assets/images/logo-2.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navBar mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./gallery.php">Show me the Money! (Script Library)</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./analyzethis.php">Analyze This!</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./blo">Dial B for Blog</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./contact.php">You Talking to me? (Contact)</a>
+                    </li>
 
-require "./dbconfig.php"; 
-?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="./navbar.js"></script>
 
 <body>
         <div style='z-index:1' class="alert alert-info text-center" role="alert">
@@ -163,7 +221,71 @@ require "./dbconfig.php";
       </div>
     </div>
   </div>
-<?php include 'footer.php'; ?>
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3483438,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1485423462196782');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1485423462196782&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e840fa469e9320caabf1254/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR3WEHY0QH"></script> <scri$
+<script>
+
+
+
+
+<footer class="bg_primary shadow-lg text-white w-100 py-3 d-flex align-items-center mt-3">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-between">
+            <div class="col-lg-6 d-flex justify-content-lg-start justify-content-center">
+                <p class="mb-0 text-center">Copyright © 2023 <span class="fst-italic text_secondary"><a href="/">ScriptReader.ai.</a></span> All rights reserved.</p>
+            </div>
+         <div class="col-lg-6">
+            <ul class="d-flex flex-wrap mb-0 justify-content-lg-end justify-content-center footerLinks list-unstyled mt-3 mt-lg-0">
+                <li class="mx-2"><a href="terms.php">Terms of Use</a></li>
+                <li class="mx-2"><a href="privacy.php">Privacy Policy</a></li>
+                <li class="mx-2"><a href="cookie.php">Cookie Policy</a></li>
+                <li class="mx-2"><a href="GDPR.php">GDPR Compliance</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+
+
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5ea1b995c6b4c10f74406a08"
     type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
   </script>
