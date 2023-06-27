@@ -1,3 +1,69 @@
+.weaknesses-fieldset {
+    border-radius: 8px;
+    border: 3px solid darkblue;
+    background-color: pink;
+    padding: 5px;
+}
+
+.weaknesses-legend {
+    all: unset;
+    color: darkblue;
+    padding: 3px;
+    font-size: 1.5em;
+}
+
+.strengths-fieldset {
+    border-radius: 8px;
+    border: 3px solid darkblue;
+    background-color: lightgreen;
+    padding: 5px;
+}
+
+.strengths-legend {
+    all: unset;
+    color: darkblue;
+    padding: 3px;
+    font-size: 1.5em;
+}
+
+.suggestions-fieldset {
+    border-radius: 8px;
+    border: 3px solid black; /* Or replace 'black' with the color you want */
+    padding: 5px;
+}
+
+.suggestions-legend {
+    all: unset;
+    padding: 3px;
+    font-size: 1.5em;
+}
+
+.critique-fieldset {
+    border-radius: 8px;
+    border: 3px solid darkblue;
+    padding: 5px;
+}
+
+.critique-legend {
+    all: unset;
+    color: darkblue;
+    padding: 3px;
+    font-size: 1.5em;
+}
+
+.summary-fieldset {
+    border-radius: 8px;
+    border: 3px solid teal;
+    padding: 5px;
+}
+
+.summary-legend {
+    all: unset;
+    color: teal;
+    padding: 3px;
+    font-size: 1.5em;
+}
+
 html,
 body {
     height: 100% !important;
