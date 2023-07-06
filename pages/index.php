@@ -33,6 +33,17 @@
         ::-webkit-scrollbar-thumb:hover {
             background-color: #23BAB1 !important;
         }
+
+        #iframe{
+          height: 50vh !important:
+          width: 100% !important;
+        }
+        @media and (max-width: 600px){
+
+          #iframe{
+          height: 35vh !important:
+          }
+        }
     </style>
 
 <title>AI-Powered Screenplay Analysis | ScriptReader.ai</title>
@@ -121,7 +132,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CxfjlGrU2BM?autoplay=1&loop=1&playlist=OV2eeJie3oQ&mute=1&controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="iframe" class="embed-responsive-item" src="https://www.youtube.com/embed/CxfjlGrU2BM?autoplay=1&loop=1&playlist=OV2eeJie3oQ&mute=1&controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -208,8 +219,8 @@
         </div>
     </div>
 </div>
-  <div class="section main mt-2xl">
-    <div class="container mt-2xl mb-2xl">
+  <div class="section main mt-2">
+    <div class="container mt-2 mb-2xl">
       <div class="row items-center">
         <div class="column align-center">
           <h1 class="max-w-lg text-giga text-center text-white">Take your screenplay to the next level with scriptreader.ai.
